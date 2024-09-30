@@ -24,7 +24,7 @@ opts_chunk$set(
 
 showtext_opts(dpi=200)
 showtext_auto()
-load("graphs_pbinter_fipu.rda")
+load("../graphs_pbinter_fipu.rda")
 ```
 
 ```{r}

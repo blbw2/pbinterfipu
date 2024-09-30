@@ -105,3 +105,7 @@ deficits_data2 <- read.xlsx("pb_fipu.xlsx", sheet = "Deficits %PIB") |>
 
 save(list = ls(pattern="^graph_.+$"), 
      file = "graphs_pbinter_fipu.rda")
+
+
+save(list = ls(pattern="^graph_.+$"), 
+     file = "docs/graphs_pbinter_fipu.rda")
