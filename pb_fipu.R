@@ -43,7 +43,7 @@ graph_deficits_pbinter <-
 
 print(graph_deficits_pbinter)
 graph_deficits_pbinter<- girafe(ggobj= graph_deficits_pbinter,
-       options = list(opts_sizing(rescale = TRUE, width = .5)),
+                                options = list(opts_sizing(rescale = TRUE, width = .5)),
        )
 
 graph_deficits_pbinter
