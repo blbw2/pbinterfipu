@@ -1,0 +1,36 @@
+---
+title: "PB Synthèse Internationale"
+subtitle: "Finances publiques"
+format: 
+  html:
+    embed-resources: true
+        
+---
+
+
+```{r, include=FALSE}
+# Les options qui se trouvent là sont fortement conseillées
+library(knitr)
+library(tidyverse)
+library(showtext) 
+library(ofce)
+library(ggiraph)
+opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  fig.pos="H", 
+  out.extra="",
+  dev="ragg_png",
+  fig.showtext=TRUE,
+  cache=FALSE)
+
+showtext_opts(dpi=200)
+showtext_auto()
+load("graphs_pbinter_fipu.rda")
+```
+
+```{r}
+graph_deficits_pbinter
+```
+
