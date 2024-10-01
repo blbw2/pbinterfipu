@@ -9,11 +9,6 @@ project:
       openSidebar: false
 ---
 
-# Avant-première du graph pour la partie finances publiques du PB inter
-
-La nécessité de faire face aux chocs successifs de la pandémie puis des hausses de prix énergétiques ont provoqué des réactions vigoureuses de la part des gouvernements (@fig-deficits). En 2023, les déficits étaient donc plus élevés qu'avant les crises, malgré des différences importantes entre pays : par exemple, les Etats-Unis ont affiché le déficit le plus élevé en 2023 malgré leur situation d'exportateur net d'énergie ; la dégradation des finances italiennes s'explique en partie par l'ampleur des mesures prises en réponse à l'augmentation des prix de l'énergie, mais aussi par une perte de contrôle sur le dispositif du "Superbonus"^[Adopté en 2020 comme mesure de relance, le Superbonus consistait initialement en un crédit d'impôt de 110% pour des rénovations de bâtiments à des fins d'efficience énergétique. Le coût total du dispositif depuis 2020 serait de 123 milliards d'euros, contre une estimation ex-ante par le gouvernement italien de 36.5 milliards.].
-
-Sur la période 2023-2025, les économies avancées devraient donc connaître une amélioration de leurs soldes publics. Dans une certaine mesure, cette évolution est la conséquence directe de la stabilisation des prix de l'énergie, qui amène les gouvernements à mettre fin à leurs mesures de soutien dès 2024. D'autre part, au sein de la zone euro, la suspension des exigences budgétaires décidée pour permettre aux Etats de répondre aux crises se termine en 2024, au moment où les réformes adoptées vis-à-vis du cadre de gouvernance économique entrent en vigueur : la France et l'Italie en particulier sont visées par des procédures de déficit excessif. A l'exception de l'Espagne principales économies européennes mettraient en oeuvre des politiques de consolidation budgétaire structurelle en 2025 : 0.7% du PIB en Allemagne, et environ 0.5% en France et en Italie  . Les Etats-Unis verraient leur déficit se réduire, principalement sous l'effet d'une normalisation de la réaction des recettes à la croissance du PIB ; à ce stade, malgré des différences marquées en termes de la nature des mesures proposées, aucun des deux candidats à l'élection présidentielle n'ont proposé de programme structurel visant à réduire les déficits. 
 ```{r, include=FALSE}
 # Les options qui se trouvent là sont fortement conseillées
 library(knitr)
@@ -34,10 +29,26 @@ opts_chunk$set(
 showtext_opts(dpi=200)
 showtext_auto()
 load("../graphs_pbinter_fipu.rda")
+load("../graph_pbinter_salaires.rda")
 ```
+
+
+# Partie finances publiques du PB inter
+
+La nécessité de faire face aux chocs successifs de la pandémie puis des hausses de prix énergétiques ont provoqué des réactions vigoureuses de la part des gouvernements (@fig-deficits). En 2023, les déficits étaient donc plus élevés qu'avant les crises, malgré des différences importantes entre pays : par exemple, les Etats-Unis ont affiché le déficit le plus élevé en 2023 malgré leur situation d'exportateur net d'énergie ; tandis que la dégradation des finances italiennes s'explique en partie par l'ampleur des mesures prises en réponse à l'augmentation des prix de l'énergie, mais aussi par une perte de contrôle sur le dispositif du "Superbonus"^[Adopté en 2020 comme mesure de relance, le Superbonus consistait initialement en un crédit d'impôt de 110% pour des rénovations de bâtiments à des fins d'efficience énergétique. Le coût total du dispositif depuis 2020 serait de 123 milliards d'euros, contre une estimation ex-ante par le gouvernement italien de 36.5 milliards.].
+
+Sur la période 2023-2025, les économies avancées devraient donc connaître une amélioration de leurs soldes publics. Dans une certaine mesure, cette évolution est la conséquence directe de la stabilisation des prix de l'énergie, qui amène les gouvernements à mettre fin à leurs mesures de soutien dès 2024. D'autre part, au sein de la zone euro, la suspension des exigences budgétaires décidée pour permettre aux Etats de répondre aux crises se termine en 2024, au moment où les réformes adoptées vis-à-vis du cadre de gouvernance économique entrent en vigueur : la France et l'Italie en particulier sont visées par des procédures de déficit excessif. Les principales économies européennes mettraient en oeuvre des politiques de consolidation budgétaire structurelle en 2025 : 0.9% du PIB en Italie (0.5% en excluant l'arrêt du Superbonus), 0.7% en Allemagne, et environ 0.5% en Espagne et en France. Les Etats-Unis verraient leur déficit se réduire, principalement grâce à un réalignement de l'évolution des recettes sur celle du PIB [?], tandis que l'impulsion budgétaire pour 2024 serait positive (+0.6%). De plus, malgré des différences marquées en termes de la nature des mesures budgétaires proposées, aucun des deux candidats à l'élection présidentielle n'ont proposé de programme de réduction des déficits structurels. 
 
 ```{r}
 #| label: fig-deficits
 
 graph_deficits_pbinter
 ```
+
+
+# Salaires
+
+```{r}
+graph_Salaires
+```
+

@@ -48,49 +48,6 @@ graph_deficits_pbinter<- girafe(ggobj= graph_deficits_pbinter,
 
 graph_deficits_pbinter
 
-(ggplot(data = deficits_data |> filter(geo %in% c("DEU","ESP","FRA", "ITA") & (!mesure == "total")),
-       aes(x = interaction(annee,geo), y = value, fill = factor(mesure))) +
-  geom_bar(stat = "identity", position = "stack") +
-  xlab("")+
-  ylab("Solde public (% du PIB)")+
-  theme_ofce(
-    axis.text.x = element_text(size = rel(0.8), margin = margin(t = 6)),
-    ggh4x.axis.nesttext.x = element_text(size = rel(1.2), margin = margin(t = 3))
-  ) +
-  scale_x_discrete(guide = "axis_nested")+
-  scale_fill_manual(labels = c("Autre", "COVID", "Cycle", "Energie", "Intérêts" ),
-                      values = c("indianred3","seagreen4", "goldenrod3","dodgerblue2","grey41" ))+
-  labs(fill = "",
-       caption = "NB : hypothèse provisoire de stabilité des charges d'intérêts en prévision (hormis Italie)"))
-
-ggsave("graph_deficits_decomposes.png")
-
-
-
-#### Donnees & graph en retirant l'ajustement cyclique de la Commission
-deficits_data2 <- read.xlsx("pb_fipu.xlsx", sheet = "Deficits %PIB") |> 
-  filter(geo %in% c("DEU", "FRA", "ITA", "ESP")) |> 
-  group_by(geo) |> 
-  mutate(across(-c(mesure), ~ case_when(mesure == "autre" ~ .[mesure =="autre"]+.[mesure == "cycle"], TRUE ~.))) |> 
-  filter(!mesure=="cycle") |> 
-  pivot_longer(-c(geo,mesure), names_to = "annee", values_to = "value")
-
-
-(ggplot(data = deficits_data2 |> filter(geo %in% c("DEU","ESP","FRA", "ITA") & (!mesure == "total")),
-        aes(x = interaction(annee,geo), y = value, fill = factor(mesure))) +
-    geom_bar(stat = "identity", position = "stack") +
-    xlab("")+
-    ylab("Solde public (% du PIB)")+
-    theme_ofce(
-      axis.text.x = element_text(size = rel(0.8), margin = margin(t = 6)),
-      ggh4x.axis.nesttext.x = element_text(size = rel(1.2), margin = margin(t = 3))
-    ) +
-    scale_x_discrete(guide = "axis_nested")+
-    scale_fill_manual(labels = c("Autre", "COVID", "Energie", "Intérêts"),
-                      values = c("indianred3","seagreen4", "dodgerblue2","grey41" ))+
-    labs(fill = "",
-         caption = "NB : hypothèse provisoire de stabilité des charges d'intérêts en prévision (hormis Italie)"))
-
 save(list = ls(pattern="^graph_.+$"), 
      file = "graphs_pbinter_fipu.rda")
 
