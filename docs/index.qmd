@@ -33,12 +33,15 @@ load("../graph_pbinter_salaires.rda")
 ```
 
 
-# Partie finances publiques du PB inter
+# Après les mesures d'urgence, vers une consolidation budgétaire
 
-La nécessité de faire face aux chocs successifs de la pandémie puis des hausses de prix énergétiques ont provoqué des réactions vigoureuses de la part des gouvernements (@fig-deficits). En 2023, les déficits étaient donc plus élevés qu'avant les crises, malgré des différences importantes entre pays : par exemple, les Etats-Unis ont affiché le déficit le plus élevé en 2023 malgré leur situation d'exportateur net d'énergie ; tandis que la dégradation des finances italiennes s'explique en partie par l'ampleur des mesures prises en réponse à l'augmentation des prix de l'énergie, mais aussi par une perte de contrôle sur le dispositif du "Superbonus"^[Adopté en 2020 comme mesure de relance, le Superbonus consistait initialement en un crédit d'impôt de 110% pour des rénovations de bâtiments à des fins d'efficience énergétique. Le coût total du dispositif depuis 2020 serait de 123 milliards d'euros, contre une estimation ex-ante par le gouvernement italien de 36.5 milliards.].
+Les chocs successifs de la pandémie puis des hausses de prix énergétiques, ainsi que les mesures de soutien mises en oeuvre par les gouvernements, ont donné lieu à une augmentation des déficits et des niveaux de dette publique entre 2020 et 2023(@fig-dette et @fig-deficits). Cette trajectoire commune recoupe néanmoins des situations nationales différentes : par exemple, les Etats-Unis ont affiché le déficit le plus élevé en 2023 malgré leur situation d'exportateur net d'énergie ; tandis que la dégradation des finances italiennes s'explique en partie par l'ampleur des mesures prises en réponse à l'augmentation des prix de l'énergie, mais aussi par une perte de contrôle sur le dispositif du *Superbonus*. La quasi-stabilité du niveau de dette italien malgré des déficits importants s'explique par le dynamisme du PIB nominal et le traitement comptable du Superbonus^[Adopté en 2020 comme mesure de relance, le Superbonus consistait initialement en un crédit d'impôt de 110% pour des rénovations de bâtiments à des fins d'efficience énergétique. Le coût total du dispositif depuis 2020 serait de 123 milliards d'euros, contre une estimation ex-ante par le gouvernement italien de 36.5 milliards. D'un point de vue comptable, les crédits d'impôts sont considérés comme des dépenses attribuées à l'année de l'ouverture des droits, avec un effet immédiat sur le solde public ; cependant, leur utilisation étant étalée sur plusieurs années, leur impact sur la dette publique sera réparti sur les prochaines années.]
 
-Sur la période 2023-2025, les économies avancées devraient donc connaître une amélioration de leurs soldes publics. Dans une certaine mesure, cette évolution est la conséquence directe de la stabilisation des prix de l'énergie, qui amène les gouvernements à mettre fin à leurs mesures de soutien dès 2024. D'autre part, au sein de la zone euro, la suspension des exigences budgétaires décidée pour permettre aux Etats de répondre aux crises se termine en 2024, au moment où les réformes adoptées vis-à-vis du cadre de gouvernance économique entrent en vigueur : la France et l'Italie en particulier sont visées par des procédures de déficit excessif. Les principales économies européennes mettraient en oeuvre des politiques de consolidation budgétaire structurelle en 2025 : 0.9% du PIB en Italie (0.5% en excluant l'arrêt du Superbonus), 0.7% en Allemagne, et environ 0.5% en Espagne et en France. Les Etats-Unis verraient leur déficit se réduire, principalement grâce à un réalignement de l'évolution des recettes sur celle du PIB [?], tandis que l'impulsion budgétaire pour 2024 serait positive (+0.6%). De plus, malgré des différences marquées en termes de la nature des mesures budgétaires proposées, aucun des deux candidats à l'élection présidentielle n'ont proposé de programme de réduction des déficits structurels. 
+```{r}
+graph_dette_pbinter
+```
 
+Sur la période 2023-2025, les principales économies dévelopées devraient connaître une amélioration de leurs soldes publics. Cette évolution est en partie une réaction à la stabilisation des prix de l'énergie, qui amène les gouvernements européens à mettre fin à leurs mesures de soutien dès 2024. Contrairement aux autres économies majeures de la zone euro, la France verrait son déficit augmenter en 2024 (de 5.5% en 2023 à 6.2% en 2024) ; les Etats-Unis connaîtraient également une dégradation du solde public (7.9% à 8.4%), sous l'effet d'une impulsion budgétaire positive. Les principales économies européennes poursuivraient des politiques d'ajustement budgétaire structurel en 2025 : 0.5% du PIB en Italie, 0.7% en Allemagne et 2% en France^[Rappelons que la suspension des exigences budgétaires décidée pour permettre aux Etats de répondre aux crises se termine en 2024, au moment où les réformes adoptées en termes de gouvernance économique entrent en vigueur : la France et l'Italie en particulier sont visées par des procédures de déficit excessif.]. En Espagne, toutefois,la croissance de l'activité permettrait une amélioration du solde sans effort structurel prévu. L'amélioration du solde américain anticipée pour 2025 (6.9%) serait également le résultat du dynamisme des recettes et de l'activité, l'impulsion budgétaire prévue étant nulle.
 ```{r}
 #| label: fig-deficits
 
@@ -46,9 +49,12 @@ graph_deficits_pbinter
 ```
 
 
-# Salaires
+# Salaires : le rattrapage se poursuit
+
+Les tensions sur les chaînes d'approvisionnement ainsi que la hausse des prix de l'énergie suite à l'invasion de l'Ukraine ont produit un choc inflationniste qui a donné lieu à une baisse des salaires en termes réels^[Déflatés de l'IPC (IPCH pour les pays de la zone euro).], malgré des salaires nominaux dynamiques (@fig-salaires). La dynamique de rattrapage des salaires réels amorcée en 2023 devrait se poursuivre en prévision, sous l'effet de nouvelles hausses de salaires et d'une baisse de l'inflation. En Italie, et dans une moindre mesure en France, les salaires réels moyens resteraient en-dessous de leurs niveaux de fin 2019. Sur la sous-période 2020-2022, malgré une inflation élevée, la moindre exposition de l'économie américaine au choc énergétique a permis une évolution encore positive des salaires réels, contrastant avec les baisses observées en Europe.
 
 ```{r}
+#| label: fig-salaires
 graph_Salaires
 ```
 
